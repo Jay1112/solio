@@ -10,10 +10,29 @@
     background-image: none;
 }
 
+.bg-position-left {
+    background-position: left;
+}
+
+.bg-position-right {
+    background-position: right;
+}
+
+.bg-position-center {
+    background-position: center;
+}
+
+.bg-position-top {
+    background-position: top;
+}
+
+.bg-position-bottom {
+    background-position: bottom;
+}
+
 @media screen and (max-width: 767px) {
     .product-background {
         background-image: url("./assets/cover.webp");
-        background-position: center;
     }
 }
 
