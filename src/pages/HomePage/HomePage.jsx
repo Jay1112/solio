@@ -6,7 +6,7 @@ import HeroImage from "../../assets/cover.webp";
 function HomePage() {
   return (
     <NavBarLayout>
-      <div className="flex w-full items-stretch justify-center">
+      <div className="product-background flex w-full items-stretch justify-center px-2 py-4 md:px-8 md:py-4">
         <div className="flex w-full flex-1 flex-col items-center justify-center px-2">
           <p className="line-height my-2 hidden w-full text-5xl md:block">
             Display your all
@@ -18,7 +18,7 @@ function HomePage() {
             Info at One Place
           </p>
           <p
-            className="block text-center text-5xl md:hidden"
+            className="poppins block text-center text-5xl font-semibold text-white md:hidden"
             style={{ lineHeight: "70px" }}
           >
             Display your all Social Media Platforms Info at One Place

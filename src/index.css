@@ -6,14 +6,25 @@
     border: 1px solid red;
 }
 
+.product-background {
+    background-image: none;
+}
+
+@media screen and (max-width: 767px) {
+    .product-background {
+        background-image: url("./assets/cover.webp");
+        background-position: center;
+    }
+}
+
 .monster {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 .roboto {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 .poppins {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
