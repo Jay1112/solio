@@ -1,11 +1,18 @@
+import DashboardHeader from "../../components/DashboardHeader/DashboardHeader";
+import ProfileForm from "../../components/ProfileForm/ProfileForm";
 import SideBarLayout from "../../layouts/SideBarLayout/SideBarLayout";
+import Divider from '../../components/Divider/Divider';
+import SocialLinksForm from "../../components/SocialLinksForm/SocialLinksForm";
 
 function DashboardPage(){
     return (
         <SideBarLayout>
             <div className="flex w-full items-center justify-start flex-col">
-                <div className="w-full bg-gray-300 h-[200px] relative">
-                    <div  className="w-[150px] h-[150px] bg-indigo-500 rounded-full absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2"></div>
+                <DashboardHeader />
+                <div className="w-full">
+                    <ProfileForm />
+                    <Divider applyStyle={'mx-4 p-[1px] bg-gray-300'} />
+                    <SocialLinksForm />
                 </div>
             </div>
         </SideBarLayout>
