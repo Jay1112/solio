@@ -6,7 +6,7 @@ function SignUp() {
       <p className="mb-4 text-center text-3xl font-medium">Sign Up</p>
       <div className="mb-5">
         <label
-          for="username"
+          htmlFor="username"
           className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
         >
           Username
@@ -21,7 +21,7 @@ function SignUp() {
       </div>
       <div className="mb-5">
         <label
-          for="email"
+          htmlFor="email"
           className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
         >
           Email
@@ -36,7 +36,7 @@ function SignUp() {
       </div>
       <div className="mb-5">
         <label
-          for="password"
+          htmlFor="password"
           className="mb-2 block text-sm font-medium text-gray-900 dark:text-white"
         >
           Password
