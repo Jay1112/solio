@@ -2,27 +2,18 @@ const List = {
     list: [
       {
         id: 1,
-        title: "Read some news",
+        platform : 'Instagram',
+        link: "https://www.instagram.com/jay1112",
       },
       {
         id: 2,
-        title: "Go out for a walk",
+        platform : 'Facebook',
+        link: "https://www.facebook.com/jayfb",
       },
       {
         id: 3,
-        title: "Do some exercise",
-      },
-      {
-        id: 4,
-        title: "Watch tutorials on YouTube",
-      },
-      {
-        id: 5,
-        title: "Netflix and chill",
-      },
-      {
-        id: 6,
-        title: "Read a book",
+        platform : 'LinkedIn',
+        link: "https://www.linkedin.com/jaylink11",
       },
     ],
     getList: function () {

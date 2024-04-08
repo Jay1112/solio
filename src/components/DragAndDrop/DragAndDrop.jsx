@@ -1,22 +1,20 @@
-import List from "../../mock/data";
-import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
-function TestDragDrop() {
-    const [items, setItems] = useState(List.list);
+function DragAndDrop({
+    list,
+    updateList,
+    Component
+}) {
 
     function onDragEnd(result) {
-        console.log(result);
         if (!result.destination) {
             return;
         }
-        const newItems = [...items];
+        const newItems = [...list];
         const [removed] = newItems.splice(result.source.index, 1);
         newItems.splice(result.destination.index, 0, removed);
-        setItems(newItems);
-        console.log(newItems);
+        updateList(newItems);
     }
-    
 
     return (
         <DragDropContext onDragEnd={onDragEnd}>  
@@ -26,7 +24,7 @@ function TestDragDrop() {
                         {...provided.droppableProps}  
                         ref={provided.innerRef}  
                     >  
-                        {items.map((item, index) => (  
+                        {list.map((item, index) => (  
                             <Draggable key={item.id} draggableId={`droppable-${item.id}`} index={index}>  
                                 {(provided, snapshot) => (  
                                    <div  
@@ -34,7 +32,7 @@ function TestDragDrop() {
                                      {...provided.draggableProps}  
                                      {...provided.dragHandleProps}  
                                    >  
-                                    <p>{item.title}</p>
+                                    <Component data={item} />
                                    </div>  
                                 )}  
                             </Draggable>  
@@ -46,4 +44,4 @@ function TestDragDrop() {
     )
 }
 
-export default TestDragDrop;
+export default DragAndDrop;
