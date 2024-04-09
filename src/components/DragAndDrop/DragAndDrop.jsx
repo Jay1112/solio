@@ -3,7 +3,8 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 function DragAndDrop({
     list,
     updateList,
-    Component
+    Component,
+    onDragCompleted
 }) {
 
     function onDragEnd(result) {
@@ -14,6 +15,9 @@ function DragAndDrop({
         const [removed] = newItems.splice(result.source.index, 1);
         newItems.splice(result.destination.index, 0, removed);
         updateList(newItems);
+        if(onDragCompleted){
+            onDragCompleted();
+        }
     }
 
     return (

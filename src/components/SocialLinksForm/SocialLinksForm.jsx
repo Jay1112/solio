@@ -10,10 +10,17 @@ function SocialLinksForm(){
         setSocialList(updatedList);
     }
 
+    function onDragCompleted(){
+        const element = document.querySelector('#social-platforms-section');
+        if(element){
+            element.scrollIntoView({ behavior : 'smooth' });
+        }
+    }
+
     return (
-        <form className="p-4">
-            <h2 className="poppins text-2xl tracking-wider">Social Platforms</h2>
-            <DragAndDrop list={socialList} updateList={handleListChange} Component={UserSocialMediaItem} />
+        <form id='social-platforms-section' className="p-4">
+            <h2 className="poppins text-4xl md:text-2xl tracking-wider">Social Platforms</h2>
+            <DragAndDrop list={socialList} updateList={handleListChange} Component={UserSocialMediaItem} onDragCompleted={onDragCompleted} />
             <button className='dark-button-style px-4 py-2 poppins text-sm my-2'>
                 Save
             </button>
