@@ -13,10 +13,10 @@ function UserSocialMediaItem({
                 <p className="roboto px-6 w-[150px]">{data.platform}</p>
                 <p className="p-2 flex-1 poppins">{data.link}</p>
                 <div className="flex items-center justify-center">
-                    <button className="mx-2 text-lg p-2 dark-button-style">
+                    <button className="mx-2 text-lg p-2 dark-button-style rounded-sm">
                         <MdEdit/>
                     </button>
-                    <button className="mx-2 text-lg p-2 dark-button-style">
+                    <button className="mx-2 text-lg p-2 dark-button-style rounded-sm">
                         <MdDelete/>
                     </button>
                 </div>
