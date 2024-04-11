@@ -4,7 +4,8 @@ function DragAndDrop({
     list,
     updateList,
     Component,
-    onDragCompleted
+    onDragCompleted,
+    containerStyle
 }) {
 
     function onDragEnd(result) {
@@ -24,7 +25,7 @@ function DragAndDrop({
         <DragDropContext onDragEnd={onDragEnd}>  
             <Droppable droppableId="droppable-1" >  
                 {(provided, snapshot) => (  
-                    <div  
+                    <div className={containerStyle || ''}
                         {...provided.droppableProps}  
                         ref={provided.innerRef}  
                     >  
