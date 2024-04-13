@@ -56,3 +56,19 @@
 .light-button-style {
     @apply border-2 border-slate-800 bg-white text-black hover:bg-slate-800 hover:text-white
 }
+
+.common-blue-gradient {
+    background: linear-gradient(to right,#5048c8,#071484);
+}
+
+.default-desktop-cover {
+    background-image: url(./assets/default-cover.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.app-container {
+    max-width: 960px;
+    width: 100%;
+}
