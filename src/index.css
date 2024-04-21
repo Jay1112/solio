@@ -3,72 +3,71 @@
 @tailwind utilities;
 
 .debug {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 .product-background {
-    background-image: none;
+  background-image: none;
 }
 
 .bg-position-left {
-    background-position: left;
+  background-position: left;
 }
 
 .bg-position-right {
-    background-position: right;
+  background-position: right;
 }
 
 .bg-position-center {
-    background-position: center;
+  background-position: center;
 }
 
 .bg-position-top {
-    background-position: top;
+  background-position: top;
 }
 
 .bg-position-bottom {
-    background-position: bottom;
+  background-position: bottom;
 }
 
 @media screen and (max-width: 767px) {
-    .product-background {
-        background-image: url("./assets/cover.webp");
-    }
+  .product-background {
+    background-image: url("./assets/cover.webp");
+  }
 }
 
 .monster {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .roboto {
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .poppins {
-    font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dark-button-style {
-    @apply border-2 border-transparent bg-slate-800 text-white hover:border-slate-800 hover:bg-white hover:text-slate-800
+  @apply border-2 border-transparent bg-slate-800 text-white hover:border-slate-800 hover:bg-white hover:text-slate-800;
 }
 
-
 .light-button-style {
-    @apply border-2 border-slate-800 bg-white text-black hover:bg-slate-800 hover:text-white
+  @apply border-2 border-slate-800 bg-white text-black hover:bg-slate-800 hover:text-white;
 }
 
 .common-blue-gradient {
-    background: linear-gradient(to right,#5048c8,#071484);
+  background: linear-gradient(to right, #5048c8, #071484);
 }
 
 .default-desktop-cover {
-    background-image: url(./assets/default-cover.png) ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right;
+  background-image: url(./assets/default-cover.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
 }
 
 .app-container {
-    max-width: 960px;
-    width: 100%;
+  max-width: 960px;
+  width: 100%;
 }
