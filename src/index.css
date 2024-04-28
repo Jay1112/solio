@@ -85,3 +85,7 @@
           line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.flex-half {
+  flex: 0.5;
+}
