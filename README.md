@@ -1,8 +1,17 @@
-# React + Vite
+## RoadMap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Frontend
 
-Currently, two official plugins are available:
+1. React Router Dom Integration
+2. Redux Integration
+3. Product Page (NavBar)
+4. Sign In Page (NavBar)
+5. Sign Up Page (NavBar)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Backend
+
+1. Project Setup with test API
+2. MongoDB Integration
+3. Auth Flow FlowChart
+4. Database Schema Design
+5. Sign-Up API
