@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.debug {
+    @apply border-2 border-[#fff]
+}
+
+.app-overflow {
+    @apply overflow-x-hidden overflow-y-auto;
+}
+
+.app-container {
+    @apply mx-auto w-full max-w-[1200px]
+}
+
+.t-light {
+    @apply border-2 border-slate-800 text-slate-800 bg-white hover:bg-slate-800 hover:text-white
+}
+
+.t-dark {
+    @apply border-2 border-slate-800 text-white bg-slate-800 hover:bg-white hover:text-slate-800
+}
+
+.t-indigo {
+    @apply border-2 border-slate-800 text-white bg-indigo-600 hover:bg-white hover:text-slate-800
+}
+
+.bg-primary {
+    @apply bg-[#131c33]
+}
+
+.monster {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}

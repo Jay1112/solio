@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
 import { useSelector } from 'react-redux'
+import ProductPage from './pages/ProductPage';
 
 function App() {
   const app = useSelector((state) => state.app ) ;
@@ -10,7 +10,7 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<HomePage/>} />
+          <Route path='/' element={<ProductPage/>} />
         </Routes>
       </Router>
     </>
