@@ -17,7 +17,7 @@ function Navbar(){
     ]
 
     return (
-        <nav className="app-container flex items-center justify-center md:pt-2">
+        <nav className="app-container sticky top-0 bg-primary flex items-center justify-center md:pt-2">
             <AppLogoBox />
             <div className="py-2 px-4 md:px-0 flex-1 flex items-stretch justify-start">
                 {
