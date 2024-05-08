@@ -1,4 +1,4 @@
-import NavWrapper from "../layouts/NavWrappers";
+import NavWrapper from "../layouts/NavWrapper";
 
 function ProductPage(){
     return (
@@ -8,7 +8,7 @@ function ProductPage(){
                 <p className="text-[#64748b] w-full md:w-1/2 mx-auto text-center mt-4 px-4 md:px-0 text-xl md:text-normal">Solio enables social media influencers and celebrities to spread their social presence and showcase to the world via one-link.</p>
             </div>
             <div className="flex items-center justify-center mt-4">
-                <button className="p-2 px-4 rounded-sm t-indigo tracking-wider font-semibold poppins">Get Started</button>
+                <button className="p-2 px-4 rounded-md t-indigo tracking-wider font-semibold poppins">Get Started</button>
             </div>
         </NavWrapper>
     );

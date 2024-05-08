@@ -31,7 +31,7 @@ function Navbar(){
                 }
             </div>
             <div className="py-2 mx-2 flex items-center justify-center">
-                <button className="debug p-2 px-4 rounded-sm t-indigo tracking-wider">Sign-In</button>
+                <button className="debug p-2 px-4 rounded-md t-indigo tracking-wider">Sign-In</button>
             </div>
         </nav>
     );
