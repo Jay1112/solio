@@ -1,10 +1,11 @@
 import Navbar from "../components/Navbar";
+import clsx from "clsx";
 
-function NavWrapper({ children }){
+function NavWrapper({ children, lightArea }){
     return (
-       <div className="bg-primary text-white w-screen h-screen app-overflow">
+       <div className={clsx("text-white w-screen h-screen app-overflow",lightArea ? "bg-white" : "bg-primary")} >
             <Navbar />
-            <div>
+            <div className={clsx(lightArea ? "bg-white" : "bg-primary")}>
                 {children}
             </div>
         </div>

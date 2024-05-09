@@ -1,5 +1,4 @@
 import NavWrapper from "../layouts/NavWrapper";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function ProductPage(){
     return (
@@ -12,7 +11,7 @@ function ProductPage(){
                 <button className="p-2 px-4 rounded-md t-indigo tracking-wider font-semibold poppins">Get Started</button>
             </div>
             <div className="my-8 px-4 app-container">
-                <LazyLoadImage
+                <img
                     src='https://www.teachyst.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fteachyst-dashboard.94e0c88a.png&w=3840&q=75'
                     width='100%' 
                     height='auto'

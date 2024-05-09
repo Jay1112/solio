@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .debug {
-    @apply border-2 border-[#fff]
+    border: 1px solid red;
 }
 
 .app-overflow {
