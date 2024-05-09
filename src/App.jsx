@@ -6,6 +6,7 @@ import ContactPage from './pages/ContactPage';
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import DashboardPage from './pages/DashboardPage';
+import SocialsPage from './pages/SocialsPage';
 
 function App() {
   const app = useSelector((state) => state.app ) ;
@@ -20,6 +21,7 @@ function App() {
           <Route path='/sign-in/' element={<SignInPage/>} />
           <Route path='/sign-up/' element={<SignUpPage/>} />
           <Route path='/dashboard/' element={<DashboardPage/>} />  
+          <Route path='/dashboard/socials/' element={<SocialsPage/>} />
         </Routes>
       </Router>
     </>
