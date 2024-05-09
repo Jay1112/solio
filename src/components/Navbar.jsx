@@ -21,7 +21,7 @@ function Navbar({ lightArea }){
     return (
         <nav className="w-full bg-primary">
             <div className="app-container sticky top-0 flex items-center justify-center md:py-2">
-                <AppLogoBox />
+                <AppLogoBox overrideClass={'p-2 flex items-center justify-center flex-col'} />
                 <div className="py-2 px-4 md:px-0 flex-1 flex items-stretch justify-start">
                     {
                         navLinks.map((item)=>{

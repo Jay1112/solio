@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import AppLogo from '../assets/logo.webp';
 
-function AppLogoBox(){
+function AppLogoBox({
+    overrideClass
+}){
     return (
-        <div className='p-2 flex items-center justify-center flex-col'>
+        <div className={overrideClass}>
             <Link to={'/'} className='poppins flex-1 text-2xl font-semibold tracking-wider'>Solio</Link>
         </div>
     )
