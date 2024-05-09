@@ -4,6 +4,7 @@ import ProductPage from './pages/ProductPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
 
 function App() {
   const app = useSelector((state) => state.app ) ;
@@ -17,6 +18,7 @@ function App() {
           <Route path='/about/' element={<AboutPage/>} />
           <Route path='/contact/' element={<ContactPage/>} />
           <Route path='/sign-in/' element={<SignInPage/>} />
+          <Route path='/sign-up/' element={<SignUpPage/>} />
         </Routes>
       </Router>
     </>
