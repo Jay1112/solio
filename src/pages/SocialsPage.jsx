@@ -1,9 +1,9 @@
 import SidebarWrapper from "../layouts/SidebarWrapper";
 
-function Test(){
+function SocialsPage(){
     return (
         <SidebarWrapper>test</SidebarWrapper>
     );
 }
 
-export default Test;
+export default SocialsPage;

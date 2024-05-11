@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import AppLogo from '../assets/logo.webp';
 
 function AppLogoBox({
     overrideClass
