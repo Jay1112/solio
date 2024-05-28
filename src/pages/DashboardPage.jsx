@@ -5,7 +5,7 @@ function DashboardPage(){
     return (
         <SidebarWrapper>
             <div className="p-2">
-                <div className="p-2 flex items-center justify-center md:justify-start">
+                <div className="py-12 md:p-2 flex items-center justify-center md:justify-start">
                     <div className="w-[200px] h-[200px] bg-gray-300 rounded-sm"></div>
                 </div>
                 <div className="p-2">

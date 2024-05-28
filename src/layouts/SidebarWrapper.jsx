@@ -1,10 +1,9 @@
 import AppLogoBox from "../components/AppLogoBox";
 import Sidebar from '../components/Sidebar';
-import { useWindowSize } from 'usehooks-ts'
+import { useWindowSize } from 'usehooks-ts';
 
 function SidebarWrapper({ children }){
     const { width } = useWindowSize();
-    console.log();
     return (
         <>
             {
