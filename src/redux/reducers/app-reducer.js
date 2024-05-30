@@ -2,13 +2,16 @@ const initinalState = {
   appName: "Solio",
   isLoggedIn : false,
   userdata : null,
+  isSideBarOpened : false
 };
 
 export const AppActions = {
-  // will be added in future
   SET_USER_DATA : 'SET_USER_DATA',
   SET_USER_LOGGED_IN : 'SET_USER_LOGGED_IN',
-  SET_USER_LOGGED_OUT : 'SET_USER_LOGGED_OUT'
+  SET_USER_LOGGED_OUT : 'SET_USER_LOGGED_OUT',
+
+  SET_SIDEBAR_OPENED : 'SET_SIDEBAR_OPENED',
+  SET_SIDEBAR_CLOSED : 'SET_SIDEBAR_CLOSED'
 };
 
 export const appReducer = (state = initinalState, action) => {
@@ -30,6 +33,18 @@ export const appReducer = (state = initinalState, action) => {
       return {
         ...state,
         isLoggedIn : false
+      }
+
+    case AppActions.SET_SIDEBAR_OPENED : 
+      return {
+        ...state,
+        isSideBarOpened : true
+      }
+
+    case AppActions.SET_SIDEBAR_CLOSED : 
+      return {
+        ...state,
+        isSideBarOpened : false
       }
 
     default:
