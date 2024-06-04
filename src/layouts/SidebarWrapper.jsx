@@ -22,7 +22,7 @@ function SidebarWrapper({ children }){
     return (
         <>
             {
-                width > 960 &&
+                width > 639 &&
                 <div className="w-screen h-screen app-overflow flex items-center justify-start flex-col">
                     <header className="w-full border-b-2 border-gray-200 p-4">
                         <AppLogoBox overrideClass={'poppins'} />
@@ -36,7 +36,7 @@ function SidebarWrapper({ children }){
                 </div>
             }
             {
-                width <= 960 &&
+                width <= 639 &&
                 <>
                     <div className="w-screen h-screen app-overflow flex items-center justify-start flex-col">
                         <header className="w-full border-b-2 border-gray-200 p-4 flex items-stretch justify-start">
