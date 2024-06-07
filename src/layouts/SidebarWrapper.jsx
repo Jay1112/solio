@@ -2,7 +2,6 @@ import AppLogoBox from "../components/AppLogoBox";
 import Sidebar from '../components/Sidebar';
 import { useWindowSize } from 'usehooks-ts';
 import Overlay from "../components/Ui/Overlay";
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { AppActions } from '../redux/reducers/app-reducer'
 
@@ -17,6 +16,10 @@ function SidebarWrapper({ children }){
         }else{
             dispatch({ type : AppActions.SET_SIDEBAR_CLOSED });
         }
+    }
+
+    function closeSideBar(){
+        dispatch({ type : AppActions.SET_SIDEBAR_CLOSED });
     }
 
     return (
@@ -51,7 +54,9 @@ function SidebarWrapper({ children }){
                             </div>
                         </main>
                     </div>
-                    <Overlay containerStyle={ app.isSideBarOpened ? "fixed top-0 left-0 z-40 w-screen h-screen transition-transform transform-none sm:translate-x-0" : "fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0"}/>
+                    <Overlay containerStyle={ app.isSideBarOpened ? "fixed top-0 left-0 z-40 w-screen h-screen transition-transform transform-none sm:translate-x-0 duration-500" : "fixed top-0 left-0 z-40 h-screen transition-transform -translate-x-full sm:translate-x-0"}>
+                        <Sidebar containerStyle={"border-none min-w-[250px] px-2"} menuClickHandler={closeSideBar}/>
+                    </Overlay>
                 </>
             }
         </>

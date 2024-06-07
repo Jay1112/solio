@@ -1,8 +1,17 @@
 import clsx from "clsx";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-function Sidebar(){
+function Sidebar({
+    containerStyle,
+    menuClickHandler
+}){
     const location = useLocation();
+    const navigate = useNavigate();
+
+    function handleMenuLinkClicked(){
+        menuClickHandler();
+        navigate(item.link);
+    }
 
     const menuList = [
         {
@@ -32,7 +41,7 @@ function Sidebar(){
     ]
 
     return (
-        <div className="border-r-2 border-gray-200 min-w-[250px] px-2">
+        <div className={containerStyle}>
             {
                 menuList.map((item)=>{
 
@@ -48,13 +57,13 @@ function Sidebar(){
                     }
 
                     return (
-                        <div key={`sidebar-link-${item.id}`} className="my-2 hover:bg-gray-200 cursor-pointer rounded-sm">
-                            <Link to={item.link} className="p-2 flex items-center justify-center">
+                        <div key={`sidebar-link-${item.id}`} onClick={ menuClickHandler &&  handleMenuLinkClicked} className="my-2 hover:bg-gray-200 cursor-pointer rounded-sm">
+                            <div className="p-2 flex items-center justify-center">
                                 <i className={clsx(`${item.icon}`)}></i>
                                 <span className="flex-1 px-4">
                                     {item.title}
                                 </span>
-                            </Link>
+                            </div>
                         </div>
                     )
                 })
