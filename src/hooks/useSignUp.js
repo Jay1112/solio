@@ -4,11 +4,13 @@ import axios from "axios";
 import { AuthAPI, domain } from '../redux/api';
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function useSignUp(){
     const [loading,setLoading] = useState(false);
     const [error,setError] = useState(null);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const doSignUp = async (email,password,username) => {
         const url = `${domain}${AuthAPI.signup}`;
@@ -24,14 +26,15 @@ function useSignUp(){
                 dispatch({ type : AppActions.SET_USER_LOGGED_IN });
                 toast.success("Sign up SuccessFully");
                 toast.info("Please Verify OTP to open the Dashboard");
+                navigate('/dashboard/');
             }else{
                 toast.error("Sign up Failed");
                 setError("Invalid");
             }
             setLoading(false);
         }catch(err){
-            setError("Something went wrong while registering the user...");
-            toast.error("Something went wrong while registering the user...");
+            setError(err?.response?.data?.message);
+            toast.error(err?.response?.data?.message);
             setLoading(false);
         }
     }

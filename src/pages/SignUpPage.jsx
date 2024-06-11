@@ -74,11 +74,11 @@ function SignUpPage() {
             </div>
             <div className="mt-6">
               <button
-                disabled={loading }
+                disabled={loading}
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md bg-indigo-600 disabled:bg-indigo-400 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
               >
-                Sign-Up{" "}
+                { loading ? 'Loading...' : 'Sign-Up'}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

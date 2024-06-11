@@ -1,16 +1,22 @@
 import clsx from "clsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useWindowSize } from "usehooks-ts";
 
 function Sidebar({
     containerStyle,
-    menuClickHandler
 }){
     const location = useLocation();
-    const navigate = useNavigate();
+    const { width } = useWindowSize();
 
-    function handleMenuLinkClicked(){
-        menuClickHandler();
-        navigate(item.link);
+    function handleMenuLinkClick(){
+        setTimeout(()=>{
+            if(width <= 768){
+                const sideBarCloseButton = document.querySelector('#sidebar-close-button');
+                if(sideBarCloseButton){
+                    sideBarCloseButton?.click();
+                }
+            }
+        },0);
     }
 
     const menuList = [
@@ -57,13 +63,13 @@ function Sidebar({
                     }
 
                     return (
-                        <div key={`sidebar-link-${item.id}`} onClick={ menuClickHandler &&  handleMenuLinkClicked} className="my-2 hover:bg-gray-200 cursor-pointer rounded-sm">
-                            <div className="p-2 flex items-center justify-center">
+                        <div key={`sidebar-link-${item.id}`} className="my-2 hover:bg-gray-200 cursor-pointer rounded-sm">
+                            <Link to={item.link} onClick={handleMenuLinkClick} className="p-2 flex items-center justify-center">
                                 <i className={clsx(`${item.icon}`)}></i>
                                 <span className="flex-1 px-4">
                                     {item.title}
                                 </span>
-                            </div>
+                            </Link>
                         </div>
                     )
                 })

@@ -23,6 +23,7 @@ function Overlay({
           <div className="flex items-center justify-center my-2">
             <AppLogoBox overrideClass={"flex-1"} />
             <button
+              id="sidebar-close-button"
               onClick={closeSideBar}
               className="pi pi-times bg-gray-200 p-2"
             ></button>
