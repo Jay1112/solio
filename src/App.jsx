@@ -9,6 +9,7 @@ import DashboardPage from './pages/DashboardPage';
 import SocialsPage from './pages/SocialsPage';
 import PageNotFound from './pages/PageNotFound';
 import LoadingPage from './pages/LoadingPage';
+import OtpVerificationPage from './pages/OtpVerificationPage';
 
 function App() {
   const app = useSelector((state) => state.app ) ;
@@ -24,6 +25,7 @@ function App() {
           <Route path='/sign-up/' element={<SignUpPage/>} />
           <Route path='/dashboard/' element={<DashboardPage/>} />  
           <Route path='/dashboard/socials/' element={<SocialsPage/>} />
+          <Route path='/verify-otp/' element={<OtpVerificationPage/>} />
           <Route path='/loading/' element={<LoadingPage />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
