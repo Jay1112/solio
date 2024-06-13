@@ -1,10 +1,23 @@
+import { useState } from "react";
+import useVerifyOTP from "../hooks/useVerifyOtp";
+import { useSelector } from "react-redux";
+
 function VerifyOtpForm(){
+    const [otp,setOTP] = useState('');
+    const state = useSelector((state)=>state);
+    const { loading, verifyOtp } = useVerifyOTP();
+
+    function handleSubmit(e){
+        e.preventDefault();
+        verifyOtp(otp,'jrptl111299@gmail.com');
+    }
+
     return (
         <div className="w-full rounded-sm max-w-[600px] flex items-center justify-center mt-20 flex-col mx-auto p-8">
             <h2 className="text-3xl w-full poppins font-bold leading-tight text-white sm:text-4xl">
                 OTP Verification
             </h2>
-            <form className="w-full">
+            <form className="w-full" onSubmit={handleSubmit}>
                 <div className="mt-4">
                     <label htmlFor="otp" className="text-base font-medium text-white">
                         Enter OTP
@@ -15,6 +28,8 @@ function VerifyOtpForm(){
                             type="number"
                             min={111111}
                             max={999999}
+                            value={otp}
+                            onChange={(e)=>setOTP(parseInt(e.target.value))}
                             placeholder="Ex. 123456"
                             name="otp"
                         />
@@ -22,10 +37,11 @@ function VerifyOtpForm(){
                 </div>
                 <div className="mt-6">
                     <button
-                        type="button"
+                        disabled={loading}
+                        type="submit"
                         className="inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
                     >
-                        Verify
+                        { loading ? 'Loading...' : 'Verify'}
                         <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
