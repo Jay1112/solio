@@ -21,8 +21,7 @@ function useVerifyOTP(){
                 email
             });
             if(resp?.data?.success){
-                // dispatch({ type : AppActions.SET_USER_DATA, payload : resp?.data?.data });
-                // dispatch({ type : AppActions.SET_USER_LOGGED_IN });
+                dispatch({ type : AppActions.SET_USER_DATA, payload : null });
                 toast.success("OTP Verified");
                 toast.info("You are verified user. please do login");
                 navigate('/sign-in/');

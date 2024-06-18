@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import NavWrapper from "../layouts/NavWrapper";
+import useSignIn from "../hooks/useSignIn";
+import { useState } from "react";
 
 function SignInPage() {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+
+  const { doSignIn, loading } = useSignIn();
+
+  function handleSubmit(e){
+    e.preventDefault();
+    doSignIn(email,password);
+  }
+
   return (
     <NavWrapper>
       <div className="w-full rounded-sm max-w-[600px] flex items-center justify-center mt-20 flex-col mx-auto p-8">
@@ -9,7 +21,7 @@ function SignInPage() {
           Sign In
         </h2>
         {/* Sign Up Form  */}
-        <form className="w-full">
+        <form onSubmit={handleSubmit} className="w-full">
             <div className="mt-4">
               <label htmlFor="email" className="text-base font-medium text-white">
                 Email address
@@ -20,6 +32,8 @@ function SignInPage() {
                   type="email"
                   placeholder="Email"
                   name="email"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -33,15 +47,18 @@ function SignInPage() {
                   type="password"
                   placeholder="Password"
                   name="password"
+                  value={password}
+                  onChange={(e)=>setPassword(e.target.value)}
                 />
               </div>
             </div>
             <div className="mt-6">
               <button
-                type="button"
+                disabled={loading}
+                type="submit"
                 className="inline-flex w-full items-center justify-center rounded-md bg-indigo-600 px-3.5 py-2.5 font-semibold leading-7 text-white hover:bg-black/80"
               >
-                Sign-In{" "}
+                { loading ? 'Loading...' : 'Sign-In' }
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

@@ -29,7 +29,7 @@ function DashboardForm(){
                 </p>
                 <textarea placeholder="describe yourself here..." className="form-input rounded-sm w-full h-[100px]" />
             </div>
-            <button className="t-dark w-full md:w-auto px-4 py-2 my-2 tracking-wider font-semibold rounded-sm active:bg-slate-800 active:text-white">
+            <button type="submit" className="t-dark w-full md:w-auto px-4 py-2 my-2 tracking-wider font-semibold rounded-sm active:bg-slate-800 active:text-white">
                 Save
             </button>
         </form>
