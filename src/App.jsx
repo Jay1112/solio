@@ -10,26 +10,34 @@ import SocialsPage from './pages/SocialsPage';
 import PageNotFound from './pages/PageNotFound';
 import LoadingPage from './pages/LoadingPage';
 import OtpVerificationPage from './pages/OtpVerificationPage';
+import useUserSession from './hooks/useUserSession';
+import { useEffect } from 'react';
 
 function App() {
   const app = useSelector((state) => state.app ) ;
 
+  const { initAppSession, loading } = useUserSession();
+
+  useEffect(()=>{
+    initAppSession();
+  },[]);
+
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Routes>
           <Route path='/' element={<ProductPage/>} />
           <Route path='/about/' element={<AboutPage/>} />
           <Route path='/contact/' element={<ContactPage/>} />
-          <Route path='/sign-in/' element={<SignInPage/>} />
-          <Route path='/sign-up/' element={<SignUpPage/>} />
-          <Route path='/dashboard/' element={<DashboardPage/>} />  
-          <Route path='/dashboard/socials/' element={<SocialsPage/>} />
+          { !loading && !app.isLoggedIn && <Route path='/sign-in/' element={<SignInPage/>} />}
+          { !loading && !app.isLoggedIn && <Route path='/sign-up/' element={<SignUpPage/>} />}
+          { !loading &&  app.isLoggedIn && <Route path='/dashboard/' element={<DashboardPage/>} />  }
+          { !loading &&  app.isLoggedIn && <Route path='/dashboard/socials/' element={<SocialsPage/>} />}
           <Route path='/verify-otp/' element={<OtpVerificationPage/>} />
-          <Route path='/loading/' element={<LoadingPage />} />
-          <Route path='*' element={<PageNotFound />} />
+          { loading && <Route path='/loading/' element={<LoadingPage />} />}
+          { !loading && <Route path='*' element={<PageNotFound />} />}
         </Routes>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }

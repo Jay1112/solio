@@ -15,3 +15,6 @@
 10. Sidebar for MobileView
 
 11. Verify OTP Page
+12. Authentication Flow
+13. Protected Route Configuration
+14. Logout Functionality Integration

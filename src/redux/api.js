@@ -6,3 +6,7 @@ export const AuthAPI = {
     signIn : '/v1/auth/login',
     verifyOtp : '/v1/auth/verify-otp'
 }
+
+export const UserAPI = {
+    details : '/v1/user/details'
+}
