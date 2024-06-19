@@ -22,7 +22,6 @@ function useUserSession(){
         }catch(err){
             setError(err);
             setLoading(false);
-            console.log("init App Session : ", err);
         }
     }
 

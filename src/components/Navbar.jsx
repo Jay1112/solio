@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import AppLogoBox from "./AppLogoBox";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 function Navbar({ lightArea }){
     const navigate = useNavigate();
+    const app = useSelector((state) => state.app);
     const location = useLocation();
 
     const navLinks = [
@@ -33,13 +35,16 @@ function Navbar({ lightArea }){
                         })
                     }
                 </div>
-                <div className="py-2 mx-2 flex items-center justify-center">
-                    <button onClick={()=>{ location.pathname.includes('sign-in') ? navigate('/sign-up/') : navigate('/sign-in/') }} className="debug p-2 px-4 rounded-md t-indigo tracking-wider">
-                        {
-                            location.pathname.includes('sign-in') ? 'Sign-Up' : 'Sign-In'
-                        }
-                    </button>
-                </div>
+                {
+                    !app.isLoggedIn &&
+                    <div className="py-2 mx-2 flex items-center justify-center">
+                        <button onClick={()=>{ location.pathname.includes('sign-in') ? navigate('/sign-up/') : navigate('/sign-in/') }} className="debug p-2 px-4 rounded-md t-indigo tracking-wider">
+                            {
+                                location.pathname.includes('sign-in') ? 'Sign-Up' : 'Sign-In'
+                            }
+                        </button>
+                    </div>
+                }
             </div>
         </nav>
     );
