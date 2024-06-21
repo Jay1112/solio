@@ -8,7 +8,6 @@ function DashboardForm() {
   const [description, setDescription] = useState("");
 
   const app = useSelector((state) => state.app);
-  console.log(app);
 
   const { loading, updatePersonalInfo } = usePersonalInfo();
 
@@ -18,7 +17,6 @@ function DashboardForm() {
   }
 
   useEffect(() => {
-    console.log(app);
     setFullName(app?.userdata?.fullname);
     setLocation(app?.userdata?.location);
     setDescription(app?.userdata?.description);
