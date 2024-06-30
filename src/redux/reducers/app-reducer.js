@@ -1,6 +1,6 @@
 const initinalState = {
   appName: "Solio",
-  isLoggedIn : false,
+  isLoggedIn : true,
   userdata : null,
   isSideBarOpened : false
 };
