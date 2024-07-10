@@ -27,7 +27,11 @@
 }
 
 .button-indigo {
-    @apply bg-indigo-600 hover:bg-slate-800 border-4 border-indigo-200 hover:border-slate-200 active:bg-white active:text-slate-800
+    @apply bg-indigo-600 hover:bg-slate-800 border-[3px] border-indigo-200 hover:border-slate-200 active:bg-white active:text-slate-800
+}
+
+.button-rose {
+    @apply bg-rose-600 hover:bg-slate-800 border-[3px] border-rose-200 hover:border-slate-200 active:bg-white active:text-slate-800
 }
 
 .form-input {

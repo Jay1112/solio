@@ -1,9 +1,9 @@
 import DragAndDrop from '../Ui/DragAndDrop.jsx';
-import List from '../Socials/data.js';
+import List from './data.js';
 import { useState } from 'react';
-import SocialItem from '../Socials/SocialItem.jsx';
+import SocialItem from './SocialItem.jsx';
 
-function SocialLinksForm(){
+function SocialLinksList(){
     const [socialList, setSocialList] = useState(List.list);
 
     function handleListChange(updatedList){
@@ -24,4 +24,4 @@ function SocialLinksForm(){
     );
 }
 
-export default SocialLinksForm;
+export default SocialLinksList;

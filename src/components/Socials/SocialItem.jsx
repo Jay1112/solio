@@ -1,38 +1,28 @@
-import { MdOutlineDragIndicator } from "react-icons/md";
-import { MdEdit } from "react-icons/md";
-import { MdDelete } from "react-icons/md";
-import { MdOutlineContentCopy } from "react-icons/md";
-
 function SocialItem({
     data
-}){
+}){ 
     return (
-        <>
-            <div className="hidden md:flex my-2 border-2 rounded-sm border-gray-300 items-center justify-center flex-col md:flex-row p-2">
-                <p className="px-2 text-2xl"><MdOutlineDragIndicator/></p>
-                <p className="roboto px-6 w-[150px]">{data.platform}</p>
-                <p className="p-2 flex-1 poppins">{data.link}</p>
-                <div className="flex items-center justify-center">
-                    <button className="mx-2 text-lg p-2 dark-button-style rounded-sm">
-                        <MdEdit/>
+        <div className="flex items-center justify-start p-2 mb-4 border-2 bg-gray-100 rounded-sm ">
+            <p className="flex items-center justify-center px-2"><i className="pi pi-list"></i></p>
+            <div className="pl-4 flex-1">
+                <div className=" flex items-center justify-start">
+                    <p className="text-xl flex items-center justify-center"><i className={`pi pi-${data.iconImage}`}></i></p>
+                    <p className="flex-1 px-2">{data.platform}</p>
+                    <button className="border-2 border-transparent bg-indigo-500 text-white rounded-sm p-2 flex items-center justify-center hover:border-indigo-500 hover:bg-white hover:text-indigo-500">
+                        <i className="pi pi-pencil text-xs"></i>
                     </button>
-                    <button className="mx-2 text-lg p-2 dark-button-style rounded-sm">
-                        <MdDelete/>
+                    <button className="ml-2 border-2 border-transparent bg-red-500 text-white rounded-sm p-2 flex items-center justify-center hover:border-red-500 hover:bg-white hover:text-red-500">
+                        <i className="pi pi-times text-xs"></i>
                     </button>
                 </div>
+                <div className="mt-2">
+                    <p>
+                        <span className="bg-gray-600 text-white inline-flex items-center justify-center p-1.5 rounded-sm"><i className="pi pi-clone text-xs"></i></span>
+                        <a href={data.link} className="text-blue-600 pl-2" target="_blank">{data.link} </a>
+                    </p>
+                </div>
             </div>
-            <div className="flex md:hidden my-4 border-2 rounded-sm border-gray-300 items-center justify-center md:flex-row p-2 overflow-x-auto">
-                <p className="p-2 text-2xl"><MdOutlineDragIndicator/></p>
-                <p className="p-2 text-xl text-gray-400 bg-gray-100"><MdOutlineContentCopy/></p>
-                <p className="roboto text-lg mx-4 flex-1">{data.platform}</p>
-                <button className="text-lg p-2 dark-button-style rounded-sm">
-                    <MdEdit/>
-                </button>
-                <button className="ml-2 text-lg p-2 dark-button-style rounded-sm">
-                    <MdDelete/>
-                </button>
-            </div>
-        </>
+        </div>
     );
 }
 

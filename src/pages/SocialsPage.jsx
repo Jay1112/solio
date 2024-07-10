@@ -1,21 +1,23 @@
-import SocialLinksForm from "../components/SocialLinksForm/SocialLinksForm";
+import SocialLinksList from "../components/Socials/SocialLinksList";
 import SidebarWrapper from "../layouts/SidebarWrapper";
 
 function SocialsPage(){
     return (
         <SidebarWrapper>
-            <div className="p-2 flex items-stretch justify-center">
+            <div className="p-2 pt-6 md:pt-2 flex items-stretch justify-center">
                 <p className="p-2 poppins font-semibold text-2xl flex-1">Social Presence</p>
                 <div className="flex items-center justify-center">
-                    <button className="button-indigo px-4 p-2 text-white rounded-full flex items-center justify-center mx-2">
-                        <i className="text-sm pi pi-plus"></i>
-                        <span className="ml-2">ADD</span>
+                    <button className="button-indigo p-3 text-white rounded-md flex items-center justify-center mx-2">
+                        <i className="text-lg pi pi-plus"></i>
+                    </button>
+                    <button className="button-rose p-3 text-white rounded-md flex items-center justify-center mx-2">
+                        <i className="text-lg pi pi-save"></i>
                     </button>
                 </div>
                     
             </div>
             <div>
-                <SocialLinksForm />
+                <SocialLinksList />
             </div>
         </SidebarWrapper>
     );
