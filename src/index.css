@@ -6,3 +6,25 @@
   padding: 0;
   margin: 0;
 }
+
+.debug {
+  @apply border-[1px] border-[#fff]
+}
+
+.nav-stroke {
+  background: linear-gradient(135deg, #666666 33%, #999999 66%, #666666 100%);
+}
+
+.nav-box-shadow {
+  box-shadow: 0 -20px 60px -15px rgba(255, 255, 255,0.75);
+}
+
+.tag-line-text {
+  background: -webkit-linear-gradient(45deg, #E11D48 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.primary-button {
+  @apply border-2 border-primary bg-primary text-light  hover:text-primary hover:bg-dark active:bg-primary active:text-light
+}

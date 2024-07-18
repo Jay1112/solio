@@ -12,6 +12,12 @@ export default {
       "secondary" : "#b5b2b2",
       "dark": "#19191c",
       "darker": "#000000",
+      "light" : "#ffffff"
+    },
+    fontFamily : {
+      "monster" : '"Montserrat", sans-serif',
+      "poppins" : '"Poppins", sans-serif',
+      "roboto"  : '"Roboto", sans-serif',
     }
   },
   plugins: [],
