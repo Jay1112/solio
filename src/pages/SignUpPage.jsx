@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react'
 import NavbarLayout from "../layouts/NavbarLayout";
-import SignInForm from '../components/Sign-In/SignInForm';
+import SignUpForm from '../components/Sign-Up/SignUpForm';
 
-function SignInPage() {
+function SignUpPage() {
   return (
     <NavbarLayout>
       <div className="h-full flex items-center justify-center">
         <div className="flex-1 p-4 max-w-[600px]">
-            <SignInForm />
+            <SignUpForm />
         </div>
       </div>
     </NavbarLayout>
-  );
+  )
 }
 
-export default SignInPage;
+export default SignUpPage
