@@ -1,12 +1,14 @@
 import React from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import Button from '../ui/Button';
 
 function Navbar() {
+  const location = useLocation();
   const navigate = useNavigate();
 
   function handleSignIn(){
-    navigate('/sign-in/');
+    const page = location.pathname !== '/sign-in/' ? '/sign-in/' : '/sign-up/';
+    navigate(page);
   }
 
   return (
@@ -18,7 +20,9 @@ function Navbar() {
                 <p className='font-poppins mr-3 ml-3 hover:text-primary'><NavLink to="/contact">Contact</NavLink></p>
             </div>
             <div className='flex items-center justify-center'>
-                <Button buttonStyle='primary-button px-2 py-[4px] text-lg rounded-sm' clickHandler={handleSignIn}>Sign-In</Button>
+                <Button buttonStyle='primary-button px-2 py-[4px] text-lg rounded-sm' clickHandler={handleSignIn}>
+                  { location.pathname !== '/sign-in/' ? 'Sign-In' : 'Sign-up'  }
+                </Button>
             </div>
         </nav>
     </>

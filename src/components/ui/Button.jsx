@@ -4,7 +4,7 @@ function Button({
     buttonStyle = '',
     children,
     clickHandler = () => {},
-    props
+    ...props
 }) {
   return (
     <button className={`${buttonStyle}`} onClick={clickHandler} {...props}>

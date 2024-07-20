@@ -28,3 +28,7 @@
 .primary-button {
   @apply border-2 border-primary bg-primary text-light  hover:text-primary hover:bg-dark active:bg-primary active:text-light
 }
+
+.primary-input {
+  @apply border-2 border-secondary bg-darker text-light focus:border-primary placeholder:text-secondary outline-none
+}
