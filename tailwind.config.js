@@ -10,6 +10,7 @@ export default {
       "primary" : "#e11d48",
       "subprimary" : "#2563EB",
       "secondary" : "#b5b2b2",
+      "subsecondary" : "#414146",
       "dark": "#19191c",
       "darker": "#000000",
       "light" : "#ffffff"
