@@ -1,7 +1,8 @@
 // Backend APIs
 
 export const AuthAPI = {
-    signIn : '/v1/auth/login'
+    signIn : '/v1/auth/login',
+    signOut : '/v1/auth/logout'
 }
 
 export const UserAPI = {

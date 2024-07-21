@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setUserLoggedIn, setUserLoggedOut, setNonVerifiedUserLoggedIn } from '../store/features/authSlice';
+import { setUserLoggedIn, setNonVerifiedUserLoggedIn } from '../store/features/authSlice';
 import axios from "axios";
 import { AuthAPI } from "../store/apis";
 import { AppConfig } from '../config/conf';
