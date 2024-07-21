@@ -17,7 +17,6 @@ function useSession(){
         try{
             const resp = await axios.get(url,{ withCredentials: true });
             if(resp?.data?.success){
-                toast.success("Sign In SuccessFully");
                 dispatch(setUserLoggedIn(resp?.data?.data));
             }
         }catch(err){

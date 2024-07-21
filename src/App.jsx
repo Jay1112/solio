@@ -7,6 +7,7 @@ import useSession from './hooks/useSession';
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PageNotFound from "./pages/PageNotFound";
+import LoadingPage from "./pages/LoadingPage";
 
 function App() {
   const { initAppSession, loading } = useSession();
@@ -22,7 +23,8 @@ function App() {
       { !loading &&  auth.isLoggedIn && <Route path="/dashboard/" element={<DashBoardPage/>} />}
       { !loading && !auth.isLoggedIn && <Route path="/sign-in/" element={<SignInPage/>} /> }
       { !loading && !auth.isLoggedIn && <Route path="/sign-up/" element={<SignUpPage/>} /> }
-      <Route path="*" element={<PageNotFound/>} />
+      { !loading &&  <Route path="*" element={<PageNotFound/>} /> }
+      {  loading &&  <Route path="*" element={<LoadingPage/>} /> }
     </Routes>
   )
 }

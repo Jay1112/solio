@@ -5,21 +5,22 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    colors : {
-      "primary" : "#e11d48",
-      "subprimary" : "#2563EB",
-      "secondary" : "#b5b2b2",
-      "subsecondary" : "#414146",
-      "dark": "#19191c",
-      "darker": "#000000",
-      "light" : "#ffffff"
+    extend: {
+      colors : {
+        "primary" : "#e11d48",
+        "subprimary" : "#2563EB",
+        "secondary" : "#b5b2b2",
+        "subsecondary" : "#414146",
+        "dark": "#19191c",
+        "darker": "#000000",
+        "light" : "#ffffff"
+      },
+      fontFamily : {
+        "monster" : '"Montserrat", sans-serif',
+        "poppins" : '"Poppins", sans-serif',
+        "roboto"  : '"Roboto", sans-serif',
+      }
     },
-    fontFamily : {
-      "monster" : '"Montserrat", sans-serif',
-      "poppins" : '"Poppins", sans-serif',
-      "roboto"  : '"Roboto", sans-serif',
-    }
   },
   plugins: [],
 }
