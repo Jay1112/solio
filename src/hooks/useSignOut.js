@@ -21,11 +21,13 @@ function useSignOut(){
             if(resp?.data?.success){
                 dispatch(setUserLoggedOut());
                 navigate('/sign-in/');
+                toast.success("Sign out SuccessFully");
             }else{
-                toast.error("Logout Failed");
+                toast.error("Sign-out Failed");
             }
             setLoading(false);
         }catch(error){
+            toast.error("Something went wrong while destroying the session");
             setError(err?.response?.data?.message);
             toast.error(err?.response?.data?.message);
         }finally{

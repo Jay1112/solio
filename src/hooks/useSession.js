@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { setUserLoggedIn } from '../store/features/authSlice';
 import axios from "axios";
 import { AppConfig } from '../config/conf';
-import { UserAPI } from '../store/apis'
+import { UserAPI } from '../store/apis';
+import { toast } from "react-hot-toast";
 
 function useSession(){
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ function useSession(){
         try{
             const resp = await axios.get(url,{ withCredentials: true });
             if(resp?.data?.success){
+                toast.success("Sign In SuccessFully");
                 dispatch(setUserLoggedIn(resp?.data?.data));
             }
         }catch(err){
