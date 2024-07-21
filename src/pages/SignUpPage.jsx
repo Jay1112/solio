@@ -6,7 +6,7 @@ function SignUpPage() {
   return (
     <NavbarLayout>
       <div className="h-full flex items-center justify-center">
-        <div className="flex-1 p-4 max-w-[600px]">
+        <div className="flex-1 p-4 max-w-[600px] animated animatedFadeInUp fadeInUp">
             <SignUpForm />
         </div>
       </div>

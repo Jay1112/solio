@@ -9,7 +9,7 @@ function Page404() {
   const auth = useSelector((state) => state.auth);
 
   return (
-    <div className="w-full md:w-1/2 max-w-[400px] px-2 flex items-center justify-center flex-col">
+    <div className="w-full md:w-1/2 max-w-[400px] px-2 flex items-center justify-center flex-col animated animatedFadeInUp fadeInUp">
       <LazyImage
         src={NotFoundImage}
         width={300}
