@@ -33,10 +33,11 @@ function useSignIn(){
                 toast.error("Sign In Failed");
                 setError("Something went wrong while validating credentials");
             }
-            setLoading(false);
         }catch(err){
             setError(err?.response?.data?.message);
             toast.error(err?.response?.data?.message);
+        }
+        finally{
             setLoading(false);
         }
     }

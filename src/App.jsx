@@ -3,14 +3,24 @@ import ProductPage from "./pages/ProductPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import DashBoardPage from "./pages/DashBoardPage";
+import useSession from './hooks/useSession';
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
+  const { initAppSession, loading } = useSession();
+  const auth = useSelector((state) => state.auth);
+
+  useEffect(()=>{
+    initAppSession();
+  },[]);
+
   return (
     <Routes>
       <Route path="/" element={<ProductPage/>} />
-      <Route path="/dashboard/" element={<DashBoardPage/>} />
-      <Route path="/sign-in/" element={<SignInPage/>} />
-      <Route path="/sign-up/" element={<SignUpPage/>} />
+      { !loading &&  auth.isLoggedIn && <Route path="/dashboard/" element={<DashBoardPage/>} />}
+      { !loading && !auth.isLoggedIn && <Route path="/sign-in/" element={<SignInPage/>} /> }
+      { !loading && !auth.isLoggedIn && <Route path="/sign-up/" element={<SignUpPage/>} /> }
     </Routes>
   )
 }
