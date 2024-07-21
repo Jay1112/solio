@@ -2,15 +2,17 @@ import React from "react";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import NavLink from "../layout/NavLink";
+import useSignIn from '../../hooks/useSignIn';
 
 function SignInForm() {
+  const { doSignIn, loading } = useSignIn();
 
   function handleSubmit(e){
     e.preventDefault();
     const email = e.target[0].value ;
     const password = e.target[1].value ;
 
-    console.log(email,password);
+    doSignIn(email,password);
   }
 
   return (
@@ -36,8 +38,9 @@ function SignInForm() {
         <Button
           buttonStyle="w-full mt-4 primary-button px-2 py-2.5 text-lg rounded-sm"
           type="submit"
+          disabled={loading}
         >
-          <span className="font-poppins">Sign-in</span>
+          <span className="font-poppins">{ loading ? 'Loading...' : 'Sign-in'}</span>
         </Button>
       </form>
       <div className="w-full mt-6">
