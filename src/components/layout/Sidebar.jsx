@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { menuList } from '../../mock/data.js';
+import SidebarItem from './SidebarItem';
 
 function Sidebar() {
   return (
-    <div className='p-4 md:w-[250px] bg-dark border-r-2 border-subsecondary hidden md:block'>
-      Sidebar
+    <div className='px-2 md:w-[250px] bg-dark border-r-2 border-subsecondary hidden md:block'>
+      {
+        menuList.map((item)=>{
+          return <SidebarItem key={item.id} itemData={item} />
+        })
+      }
     </div>
   )
 }
