@@ -6,5 +6,6 @@ export const AuthAPI = {
 }
 
 export const UserAPI = {
-    session : '/v1/user/details'
+    session : '/v1/user/details',
+    personalInfo : '/v1/user/personal-info'
 }

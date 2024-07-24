@@ -6,3 +6,5 @@ export const store = configureStore({
     auth : authSlice
   },
 });
+
+store.subscribe(()=>console.log(store.getState()))

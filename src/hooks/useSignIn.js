@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setUserLoggedIn, setNonVerifiedUserLoggedIn } from '../store/features/authSlice';
+import { setUserLoggedIn, setUserData } from '../store/features/authSlice';
 import axios from "axios";
 import { AuthAPI } from "../store/apis";
 import { AppConfig } from '../config/conf';
@@ -26,7 +26,7 @@ function useSignIn(){
                 navigate('/dashboard/');
                 toast.success("Sign In SuccessFully");
             }else if(resp?.data?.success && !resp?.data?.success?.verified){
-                dispatch(setNonVerifiedUserLoggedIn(resp?.data?.data));
+                dispatch(setUserData(resp?.data?.data));
                 toast.info("Please Veify Your Account!");
                 // navigate('/verify-otp/');
             }else{

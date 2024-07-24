@@ -17,12 +17,12 @@ export const authSlice = createSlice({
         state.isLoggedIn = false ;
         state.userData = null ;
     },
-    setNonVerifiedUserLoggedIn : (state,action) => {
+    setUserData : (state,action) => {
       state.userData = action.payload ;
     }
   },
 })
 
-export const { setUserLoggedIn, setUserLoggedOut, setNonVerifiedUserLoggedIn } = authSlice.actions
+export const { setUserLoggedIn, setUserLoggedOut, setUserData } = authSlice.actions
 
 export default authSlice.reducer
