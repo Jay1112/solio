@@ -7,33 +7,32 @@ import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function useSignUp(){
+function useVerifyOTP(){
     const [loading,setLoading] = useState(false);
     const [error,setError] = useState(null);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const doSignUp = async (email,password,username) => {
-        const url = `${AppConfig.DOMAIN}${AuthAPI.signUp}`;
+    const verifyOtp = async (otp,email) => {
+        const url = `${AppConfig.DOMAIN}${AuthAPI.verifyOtp}`;
         setLoading(true);
         try{
             const resp = await axios.post(url,{
-                email,
-                password,
-                username
+                otp,
+                email
             });
             if(resp?.data?.success){
-                dispatch(setUserData(resp?.data?.data));
-                toast("Please Verify OTP to open the Dashboard", {
+                dispatch(setUserData(null));
+                toast.success("OTP Verified");
+                toast("You are verified user. please do login", {
                     icon: 'ℹ️',
-                  });
-                navigate('/verify-otp/');
+                });
+                navigate('/sign-in/');
             }else{
-                toast.error("Sign up Failed");
+                toast.error("OTP verification failed");
                 setError("Invalid");
             }
         }catch(err){
-            console.log(err);
             setError(err?.response?.data?.message);
             toast.error(err?.response?.data?.message);
         }finally{
@@ -41,7 +40,7 @@ function useSignUp(){
         }
     }
 
-    return { doSignUp, loading, error };
+    return { verifyOtp, loading, error };
 }
 
-export default useSignUp;
+export default useVerifyOTP;

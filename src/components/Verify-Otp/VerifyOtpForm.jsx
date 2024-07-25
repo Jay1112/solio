@@ -2,15 +2,18 @@ import React from "react";
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 import useSignIn from '../../hooks/useSignIn';
+import useVerifyOTP from "../../hooks/useVerifyOtp";
+import { useSelector } from "react-redux";
 
 function VerifyOtpForm() {
-//   const { doSignIn, loading } = useSignIn();
+  const { verifyOtp, loading } = useVerifyOTP();
+  const auth = useSelector((state)=>state.auth);
 
   function handleSubmit(e){
     e.preventDefault();
-    const otp = e.target[0].value ;
+    const otp = `${e.target[0].value}` ;
 
-    // doSignIn(email,password);
+    verifyOtp(otp,auth.userData.email);
   }
 
   return (
@@ -30,11 +33,10 @@ function VerifyOtpForm() {
         <Button
           buttonStyle="w-full mt-4 primary-button px-2 py-2.5 text-lg rounded-sm"
           type="submit"
-        //   disabled={loading}
+          disabled={loading}
         >
           <span className="font-poppins">
-            {/* { loading ? 'Loading...' : 'Verify'} */}
-            Verify
+            { loading ? 'Loading...' : 'Verify'}
           </span>
         </Button>
       </form>

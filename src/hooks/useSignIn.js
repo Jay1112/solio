@@ -27,13 +27,16 @@ function useSignIn(){
                 toast.success("Sign In SuccessFully");
             }else if(resp?.data?.success && !resp?.data?.success?.verified){
                 dispatch(setUserData(resp?.data?.data));
-                toast.info("Please Veify Your Account!");
-                // navigate('/verify-otp/');
+                toast("Please Veify Your Account!", {
+                    icon: 'ℹ️',
+                });
+                navigate('/verify-otp/');
             }else{
                 toast.error("Sign In Failed");
                 setError("Something went wrong while validating credentials");
             }
         }catch(err){
+            console.log(err);
             setError(err?.response?.data?.message);
             toast.error(err?.response?.data?.message);
         }
