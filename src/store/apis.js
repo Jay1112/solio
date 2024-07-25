@@ -2,6 +2,7 @@
 
 export const AuthAPI = {
     signIn : '/v1/auth/login',
+    signUp : '/v1/auth/register',
     signOut : '/v1/auth/logout'
 }
 
