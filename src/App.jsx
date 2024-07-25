@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import PageNotFound from "./pages/PageNotFound";
 import LoadingPage from "./pages/LoadingPage";
 import SocialsPage from "./pages/SocialsPage";
+import VerifyOtp from './pages/VerifyOtpPage';
 
 function App() {
   const { initAppSession, loading } = useSession();
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<ProductPage/>} />
       { !loading &&  auth.isLoggedIn && <Route path="/dashboard/" element={<DashBoardPage/>} />}
       { !loading &&  auth.isLoggedIn && <Route path="/socials/" element={<SocialsPage/>} /> }
+      { !loading && !auth.isLoggedIn && auth.userData && <Route path="/verify-otp/" element={<VerifyOtp/>} /> }
       { !loading && !auth.isLoggedIn && <Route path="/sign-in/" element={<SignInPage/>} /> }
       { !loading && !auth.isLoggedIn && <Route path="/sign-up/" element={<SignUpPage/>} /> }
       { !loading &&  <Route path="*" element={<PageNotFound/>} /> }

@@ -27,7 +27,7 @@ function Navbar() {
             <NavLink to="/contact">Contact</NavLink>
           </p>
         </div>
-        { !auth.isLoggedIn && (
+        { (!auth.isLoggedIn || !auth.userData ) && (
           <div className="flex items-center justify-center">
             <Button
               buttonStyle="primary-button px-2 py-[4px] text-lg rounded-sm"
