@@ -2,8 +2,16 @@ import React from 'react'
 import DashboardLayout from '../layouts/DashboardLayout'
 import Button from '../components/ui/Button'
 import SocialTable from '../components/Socials/SocialTable'
+import Overlay from '../components/ui/Overlay'
+import SocialModal from '../components/Socials/SocialModal'
+import { useDispatch, useSelector } from 'react-redux'
+import { setShowSocialModal } from '../store/features/socialSlice'
 
 function SocialsPage() {
+  const dispatch = useDispatch();
+
+  const social = useSelector((state) => state.social);
+
   return (
     <DashboardLayout>
         <div className='animated animatedFadeInUp fadeInUp overflow-x-auto overflow-y-auto'>
@@ -12,17 +20,22 @@ function SocialsPage() {
             </div>
             <div className='mx-4 md:mx-12 mt-4 md:mt-0 flex items-center justify-center'>
               <p className='font-semibold text-xl flex-1'>Socials</p>
-              <Button className="primary-button px-2 flex items-center justify-center py-1.5 rounded-sm">
+              <Button clickHandler={()=>dispatch(setShowSocialModal(true))}  className="primary-button px-2 flex items-center justify-center py-1.5 rounded-sm">
                 <span className='text-sm'>
                   <i className='pi pi-plus'></i>
                 </span>
                 <span className='px-2 font-poppins'>Create Social</span>
               </Button>
             </div>
-            <div className='mx-4 md:mx-12 mt-8 border-2 border-[#ffffff1e] rounded-md  overflow-x-auto overflow-y-auto'>
+            <div className='mx-4 md:mx-12 mt-8 border-2 border-[#ffffff1e] bg-black rounded-md  overflow-x-auto overflow-y-auto'>
               <SocialTable />
             </div>
         </div>
+        { social.showSocialModal &&
+          <Overlay className={'w-full flex items-center justify-center'}>
+           <SocialModal />
+          </Overlay>
+        }
     </DashboardLayout>
   )
 }
