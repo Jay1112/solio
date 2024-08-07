@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import DashboardLayout from '../layouts/DashboardLayout'
 import Button from '../components/ui/Button'
 import SocialTable from '../components/Socials/SocialTable'
@@ -6,11 +6,19 @@ import Overlay from '../components/ui/Overlay'
 import SocialModal from '../components/Socials/SocialModal'
 import { useDispatch, useSelector } from 'react-redux'
 import { setShowSocialModal } from '../store/features/socialSlice'
+import useSocials from '../hooks/useSocials'
 
 function SocialsPage() {
   const dispatch = useDispatch();
-
+  const { fetchAllSocials } = useSocials();
+ 
   const social = useSelector((state) => state.social);
+
+  useEffect(()=>{
+    if(!social.platformsList){
+      fetchAllSocials();
+    }
+  },[])
 
   return (
     <DashboardLayout>
@@ -31,7 +39,7 @@ function SocialsPage() {
               <SocialTable />
             </div>
         </div>
-        { social.showSocialModal &&
+        { (social.showSocialModal) &&
           <Overlay className={'w-full flex items-center justify-center'}>
            <SocialModal />
           </Overlay>

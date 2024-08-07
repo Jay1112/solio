@@ -11,3 +11,7 @@ export const UserAPI = {
     session : '/v1/user/details',
     personalInfo : '/v1/user/personal-info'
 }
+
+export const SocialsAPI = {
+    platforms : '/v1/socials/platforms'
+}

@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 import { useDispatch } from "react-redux";
 import { setShowSocialModal } from '../../store/features/socialSlice'
+import SocialSelect from "./SocialSelect";
+import toast from "react-hot-toast";
 
 function SocialModal() {    
   const dispatch = useDispatch();
+  const [platform,setPlatform] = useState({ label : 'Select', value : 'microsoft' });
 
   function handleSubmit(e) {
     e.preventDefault();
+    if(platform.label === 'Select' && platform.value === 'microsoft'){
+      toast.error("Please Select Your Social");
+      return;
+    }
+    const link = e.target[0].value ;
   }
 
   return (
@@ -18,6 +26,9 @@ function SocialModal() {
         <Button clickHandler={()=>dispatch(setShowSocialModal(false))} className="primary-button  px-2 py-2 text-xl md:text-sm flex items-center justify-center rounded-sm">
           <i className="pi pi-plus rotate-45"></i>
         </Button>
+      </div>
+      <div className="mt-4">
+        <SocialSelect platform={platform} handleSelectPlatform={(value)=>setPlatform(value)} />
       </div>
       <form onSubmit={handleSubmit}>
         <Input
