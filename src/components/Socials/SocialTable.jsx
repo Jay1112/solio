@@ -4,7 +4,6 @@ import SocialTableItem from "./SocialTableItem";
 function SocialTable({
     tableData
 }) {    
-    console.log("Table Data",tableData)
   return (
     <div className="bg-black rounded-md">
         {/* header  */}

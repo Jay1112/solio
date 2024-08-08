@@ -36,7 +36,6 @@ function useSignIn(){
                 setError("Something went wrong while validating credentials");
             }
         }catch(err){
-            console.log(err);
             setError(err?.response?.data?.message);
             toast.error(err?.response?.data?.message);
         }

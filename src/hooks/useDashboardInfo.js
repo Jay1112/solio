@@ -27,7 +27,6 @@ function useDashboardInfo(){
                 toast.error(resp?.message);
             }
         }catch(err){
-            console.error("error",err);
             toast.error(err?.response?.data?.message);
             setError(err);
         }finally{

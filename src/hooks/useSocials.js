@@ -50,7 +50,6 @@ function useSocials() {
 
     const createNewUserSocial = async (link, platformId) => {
         const url = `${AppConfig.DOMAIN}${SocialsAPI.createPlatform}`;
-        console.log('...test');
         setCreatePlatformLoader(true);
         try{
             const resp = await axios.post(url,{
