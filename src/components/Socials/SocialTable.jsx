@@ -1,7 +1,10 @@
 import React from "react";
-import Button from "../ui/Button";
+import SocialTableItem from "./SocialTableItem";
 
-function SocialTable() {
+function SocialTable({
+    tableData
+}) {    
+    console.log("Table Data",tableData)
   return (
     <div className="bg-black rounded-md">
         {/* header  */}
@@ -13,24 +16,11 @@ function SocialTable() {
         </div>
         {/* Rows  */}
         <div>
-            <div className="flex p-4 gap-4 font-poppins">
-                <p className="min-w-[100px] text-2xl flex items-center justify-center"><i className="pi pi-linkedin"></i></p>
-                <p className="min-w-[100px] md:min-w-[200px] flex items-center justify-start">LinkedIn</p>
-                <p className="flex-1 flex items-center justify-start min-w-[600px]">https://in.linkedin.com/in/jay-patel-93b394155/in/jay-patel-93b394155/in/jay-patel-93b394155/in/jay-patel-93b394155/</p>
-                <p className="min-w-[200px] text-center flex items-center justify-start">
-                    <Button className="primary-button  px-2 py-2 text-md md:text-sm flex items-center justify-center mr-2 rounded-sm"><i className="pi pi-pencil"></i></Button>
-                    <Button className="primary-button  px-2 py-2 text-md md:text-sm flex items-center justify-center mx-2 rounded-sm"><i className="pi pi-trash"></i></Button>
-                </p>
-            </div>
-            <div className="flex p-4 gap-4 font-poppins">
-                <p className="min-w-[100px] text-2xl flex items-center justify-center"><i className="pi pi-linkedin"></i></p>
-                <p className="min-w-[100px] md:min-w-[200px] flex items-center justify-start">LinkedIn</p>
-                <p className="flex-1 flex items-center justify-start min-w-[600px]">https://in.linkedin.com/in/jay-patel-93b394155/in/jay-patel-93b394155/in/jay-patel-93b394155</p>
-                <p className="min-w-[200px] text-center flex items-center justify-start">
-                    <Button className="primary-button  px-2 py-2 text-md md:text-sm flex items-center justify-center mr-2 rounded-sm"><i className="pi pi-pencil"></i></Button>
-                    <Button className="primary-button  px-2 py-2 text-md md:text-sm flex items-center justify-center mx-2 rounded-sm"><i className="pi pi-trash"></i></Button>
-                </p>
-            </div>
+            {
+                tableData?.map((item)=>{
+                    return <SocialTableItem key={item._id} itemData={item} />
+                })
+            }
         </div>
     </div>
   );

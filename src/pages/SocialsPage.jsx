@@ -10,13 +10,16 @@ import useSocials from '../hooks/useSocials'
 
 function SocialsPage() {
   const dispatch = useDispatch();
-  const { fetchAllSocials } = useSocials();
+  const { fetchAllSocials, fetchAllUserSocials, loader } = useSocials();
  
   const social = useSelector((state) => state.social);
 
   useEffect(()=>{
     if(!social.platformsList){
       fetchAllSocials();
+    }
+    if(!social.userPlatformsList){
+      fetchAllUserSocials();
     }
   },[])
 
@@ -36,7 +39,7 @@ function SocialsPage() {
               </Button>
             </div>
             <div className='mx-4 md:mx-12 mt-8 border-2 border-[#ffffff1e] bg-black rounded-md  overflow-x-auto overflow-y-auto'>
-              <SocialTable />
+              { social.userPlatformsList && <SocialTable tableData={social.userPlatformsList} />}
             </div>
         </div>
         { (social.showSocialModal) &&

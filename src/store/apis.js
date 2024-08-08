@@ -13,5 +13,7 @@ export const UserAPI = {
 }
 
 export const SocialsAPI = {
-    platforms : '/v1/socials/platforms'
+    platforms : '/v1/socials/platforms',
+    userPlatforms : '/v1/socials/user-platforms',
+    createPlatform : '/v1/socials/create' 
 }

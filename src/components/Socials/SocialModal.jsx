@@ -5,10 +5,12 @@ import { useDispatch } from "react-redux";
 import { setShowSocialModal } from '../../store/features/socialSlice'
 import SocialSelect from "./SocialSelect";
 import toast from "react-hot-toast";
+import useSocials from "../../hooks/useSocials";
 
 function SocialModal() {    
   const dispatch = useDispatch();
-  const [platform,setPlatform] = useState({ label : 'Select', value : 'microsoft' });
+  const { createNewUserSocial, createPlatformLoader } = useSocials();
+  const [platform,setPlatform] = useState({ label : 'Select', value : 'microsoft', id : null });
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -17,6 +19,11 @@ function SocialModal() {
       return;
     }
     const link = e.target[0].value ;
+    if(!link){
+      toast.error("Please Provide Your Social Link");
+      return;
+    }
+    createNewUserSocial(link,platform.id);
   }
 
   return (
@@ -43,7 +50,7 @@ function SocialModal() {
           type="submit"
           className="primary-button mt-2 px-4 md:px-2 py-1.5 md:py-[2px] text-xl md:text-lg flex items-center justify-center rounded-sm"
         >
-          Save
+          {createPlatformLoader ? 'Loading...' : 'Save'}
         </Button>
       </form>
     </div>

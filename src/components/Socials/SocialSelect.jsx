@@ -29,7 +29,8 @@ function SocialSelect({
     function handlePlatformSelection(item){
         handleSelectPlatform({
             label : item.name,
-            value : item.icon
+            value : item.icon,
+            id : item._id
         });
         setShowOptions(false);
     }
@@ -49,7 +50,7 @@ function SocialSelect({
                         {
                             social.platformsList && social.platformsList.map((item)=>{
                                 return (
-                                <PlatformItem  key={item._id} itemData={item} handleSelect={handlePlatformSelection} />
+                                    <PlatformItem  key={item._id} itemData={item} handleSelect={handlePlatformSelection} />
                                 )
                             })
                         }
